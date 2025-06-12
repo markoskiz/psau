@@ -1,1 +1,1 @@
-Invoke-WebRequest -Uri "https://github.com/lanmessenger/lanmessenger/releases/latest/download/lanmsngr-windows-x64.zip" -OutFile "$env:USERPROFILE\Downloads\lanmsngr.zip"
+$zip="$env:TEMP\lanmsngr.zip"; Invoke-WebRequest -Uri "https://github.com/lanmessenger/lanmessenger/releases/latest/download/lanmsngr-windows-x64.zip" -OutFile $zip; Expand-Archive $zip "$env:USERPROFILE\LanMessenger" -Force; Start-Process "$env:USERPROFILE\LanMessenger\lanmsngr.exe"
