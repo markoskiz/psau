@@ -1,3 +1,10 @@
-bitsadmin /transfer lanmsngrDownload https://github.com/lanmessenger/lanmessenger/releases/latest/download/lanmsngr-windows-x64.zip "%USERPROFILE%\Downloads\lanmsngr.zip"; `
-Expand-Archive "$env:USERPROFILE\Downloads\lanmsngr.zip" "$env:USERPROFILE\LanMessenger" -Force; `
-Start-Process "$env:USERPROFILE\LanMessenger\lanmsngr.exe"
+Set-ExecutionPolicy Bypass -Scope Process -Force; `
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; `
+iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+
+
+
+
+
+choco install lanmessenger -y
