@@ -1,1 +1,3 @@
-$zip="$env:TEMP\lanmsngr.zip"; Invoke-WebRequest -Uri "https://github.com/lanmessenger/lanmessenger/releases/latest/download/lanmsngr-windows-x64.zip" -OutFile $zip; Expand-Archive $zip "$env:USERPROFILE\LanMessenger" -Force; Start-Process "$env:USERPROFILE\LanMessenger\lanmsngr.exe"
+bitsadmin /transfer lanmsngrDownload https://github.com/lanmessenger/lanmessenger/releases/latest/download/lanmsngr-windows-x64.zip "%USERPROFILE%\Downloads\lanmsngr.zip"; `
+Expand-Archive "$env:USERPROFILE\Downloads\lanmsngr.zip" "$env:USERPROFILE\LanMessenger" -Force; `
+Start-Process "$env:USERPROFILE\LanMessenger\lanmsngr.exe"
