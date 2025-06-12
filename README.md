@@ -8,3 +8,8 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocola
 
 
 choco install lanmessenger -y
+
+choco uninstall lanmessenger -y
+
+
+posle WinKey + R -> pisi %appdata% izbrisi sve od Lan ms app
